@@ -1,0 +1,140 @@
+.skills {
+
+    &__container {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: toRem(80);
+        padding-bottom: toRem(30);
+    }
+
+    &__title {
+        @include adaptiveValue("margin-bottom", 110, 30);
+    }
+
+    &__body {
+        display: grid;
+        gap: toRem(40);        
+        @media (min-width:$mobile){
+            grid-template-columns: repeat(2, 1fr); 
+        }
+    }
+
+    &__timeline {
+    }
+
+    &__content {
+    }
+}
+.timeline {
+    display: grid;
+    @include adaptiveValue("gap", 64, 30);
+    position: relative;    
+    &::before{
+        content:'';
+        position: absolute;
+        left: toRem(12);
+        top: toEm(2.5, 16);
+        height: 100%;
+        width: 1px;
+        background-color: #f1f1f1;
+    }
+    &__item {
+        padding-left: toRem(40);
+        position: relative;
+        &::before{
+            content:'';
+            z-index: 3;
+            position: absolute;
+            left: toRem(4);
+            top: toEm(2.5, 16);
+            height: toRem(16);
+            width: toRem(16);
+            border-radius: 50%;
+            background-color: #f1f1f1;
+        }
+        &:last-child {
+            &::after{
+                content:'';
+                z-index: 2;
+                position: absolute;
+                width: 1px;
+                height: 100%;
+                left: toRem(12);
+                bottom: 0;
+                background-color: #fff;
+            }
+        }
+    }
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: toRem(10);
+        }
+    }
+
+    &__link-title {
+        line-height: 1.25;
+        font-weight: 500;
+        font-family: $secondFont;
+    }
+
+    &__text {
+        line-height: 1.2;
+        font-size: toRem(14);
+        color: $secondColor;
+        &:not(:last-child) {
+            margin-bottom: toRem(24);
+        }
+    }
+
+    &__date {
+        line-height: 1.2;
+        font-size: toRem(14);
+        font-weight: 500;
+    }
+}
+.content-skills {
+
+    &__text {
+        color: $secondColor;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 64, 20);
+        };
+    }
+
+    &__items {
+        display: grid;
+        @include adaptiveValue("gap", 40, 20);
+    }
+
+    &__item {
+    }
+
+    &__label {
+        font-weight: 500;
+        font-size: toRem(14);
+        line-height: 1.21;
+        &:not(:last-child) {
+            margin-bottom: toRem(16);
+        }
+    }
+
+    &__line {
+        background-color: $bgBlueColor;
+        border-radius: toRem(2);
+        height: 8px;
+        position: relative;
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;//widht задаем через html инлайновыми стилями
+            border-radius: toRem(2);
+            background-color: $blueColor;
+        }
+    }
+}
+

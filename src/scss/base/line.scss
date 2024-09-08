@@ -1,0 +1,31 @@
+/* 
+<div class="content-skills__item">
+    <div class="content-skills__label">React</div>
+    <div class="content-skills__line">
+        <span style="width: 67.5%;"></span>//процент от общей длины минус длина линии
+    </div>
+</div>
+
+&__label {
+    font-weight: 500;
+    font-size: toRem(14);
+    line-height: 1.21;
+    &:not(:last-child) {
+        margin-bottom: toRem(16);
+    }
+}
+&__line {
+    background-color: grey;
+    border-radius: toRem(2);
+    height: 8px;
+    position: relative;
+    span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;//widht задаем через html инлайновыми стилями
+        border-radius: toRem(2);
+        background-color: blue;
+    }
+}
+*/

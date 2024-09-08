@@ -1,0 +1,161 @@
+.portfolio {
+
+    &__container {
+        min-height: 100%;//на все секции, кроме header
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: toRem(80);
+        padding-bottom: toRem(30);
+    }
+
+    &__header {
+        display: flex;
+        gap: toRem(20);
+        align-items: center;
+        justify-content: space-between;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 144, 30);
+        }
+        @media (max-width: toEm(600)){
+            align-items: stretch;
+            flex-direction: column;
+        }
+    }
+
+    &__title {
+    }
+
+    &__controls {
+        display: flex;
+        align-items: center;
+        gap: toRem(16);        
+        @media (max-width: toEm(600)){
+            justify-content: center;
+        }
+    }
+
+    &__arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: toRem(16);
+        width: toRem(40);
+        height: toRem(40);
+        color: $blueColor;
+        font-size: toRem(11);
+        background-color: #eae6fe;
+        transition: background-color color 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #645cba;
+                color: #fff;
+            }
+        }
+
+        &_left {
+            transform: rotate(180deg);
+        }
+
+        &_right {            
+        }
+
+        &.swiper-button-disabled {
+            cursor: default;
+            opacity: 0.5;
+        }
+    }
+
+    &__slider {
+        @media (max-width: toEm(650)){
+            margin-right: toRem(-15);
+            padding-right: toRem(15);
+        }
+    }
+
+    &__wrapper {
+    }
+
+    &__slide {
+    }
+}
+.item-portfolio {
+    border: 1px solid #f5f5f5;
+    border-radius: toRem(8);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    &__image {
+        overflow: hidden;
+        opacity: 0.5;
+        //padding-bottom: percent(295, 361);//ширина, высота
+        transition: opacity 0.6s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 1;
+            }
+        }
+        @media (any-hover: none) {
+            opacity: 1;
+        }
+    }
+
+    &__img {
+        object-position: top;
+        transition: transform 0.6s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &__body {
+        padding: toRem(24);
+        display: flex;
+        flex-direction: column;
+        gap: toRem(16);
+        flex: 1 1 auto;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        gap: toRem(16);
+    }
+
+    &__title {
+        flex: 1 1 100%;
+        p {
+            &:not(:last-child) {
+                margin-bottom: toRem(8);
+            }
+        }
+    }
+
+    &__link-title {
+        font-family: $secondFont;
+        font-weight: 500;
+        line-height: 1.25;
+        &:not(:last-child) {
+            margin-bottom: toRem(8);
+        }
+    }
+
+    &__category {
+    }
+
+    &__link {
+        font-size: toRem(24);
+        color: $secondColor;
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $blueColor;
+            }
+        }
+    }
+}
+
+

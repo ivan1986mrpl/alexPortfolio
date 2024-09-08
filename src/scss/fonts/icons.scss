@@ -1,0 +1,53 @@
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*="_icon-"] {
+	&::before {
+		@extend %ic;
+	}
+}
+
+/* https://fontawesome.com/ */
+/* https://icomoon.io/ */
+/* при выгрузке из фигмы выделить иконку, перейди в object и нажать outline strock(ctrl+shift+o), потом экспортировать в формате svg, также удалить цвета иконок.
+потом очищаем цвет иконок. font name=icons, class=_icon- */
+/* в папку fonts сакачиваем с сайта icomoon. оставляем только icons.ttf  и классы из style.css, потом удаляем все, кроме icons.ttf и перезапускаем шаблон */
+/* создание иконочного шрифта подходит для простых одноцветных иконок */
+
+._icon-arrovRight:before {
+  content: "\e900";
+}
+._icon-arrowLeft:before {
+  content: "\e901";
+}
+._icon-cat:before {
+  content: "\e902";
+}
+._icon-email:before {
+  content: "\e903";
+}
+._icon-instagram:before {
+  content: "\e904";
+}
+._icon-linkedin:before {
+  content: "\e905";
+}
+._icon-location:before {
+  content: "\e906";
+}
+._icon-phone:before {
+  content: "\e907";
+}
+._icon-twitter:before {
+  content: "\e908";
+}
+._icon-works:before {
+  content: "\e909";
+}

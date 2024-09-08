@@ -1,0 +1,98 @@
+.blog {
+
+    &__container {
+        min-height: 100%;//на все секции, кроме header
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: toRem(80);
+        padding-bottom: toRem(30);
+    }
+
+    &__title {
+        @include adaptiveValue("margin-bottom", 144, 30);
+    }
+
+    &__items {
+        align-self: stretch;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(toRem(280), 1fr));
+        @include adaptiveValue("gap", 40, 20);
+    }
+
+    &__item {
+    }
+}
+.item-blog {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: toRem(8);
+    overflow: hidden;
+    border: 1px solid #f1f1f1;
+    &__image {
+        aspect-ratio: 361 / 243;
+        overflow: hidden;
+    }
+
+    &__img {
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover){
+            &:hover{
+                transform: scale(1.04);
+            }
+        }
+    }
+
+    &__body {
+        padding: toRem(16) toRem(16) toRem(24) toRem(16);
+        display: grid;
+        gap: toRem(16);
+    }
+
+    &__title {
+    }
+
+    &__link-title {
+        font-family: $secondFont;
+        font-weight: 500;
+        line-height: 1.5;
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover){
+            &:hover{
+                color: $blueColor;
+            }
+        }
+    }
+
+    &__data {
+        justify-self: start;
+    }
+
+    &__text {
+        line-height: 2;
+        color: $secondColor;
+        p {
+            &:not(:last-child) {
+                margin-bottom: toRem(8);
+            }
+        }
+    }
+
+    &__link {
+        justify-self: center;
+        margin-top: toRem(24);
+        font-weight: 500;
+        font-size: toRem(14);
+        line-height: 1.21;
+        color: $secondColor;
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover){
+            &:hover{
+                color: $blueColor;
+            }
+        }
+    }
+}
+

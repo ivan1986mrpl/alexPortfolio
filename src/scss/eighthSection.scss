@@ -1,0 +1,158 @@
+.contacts {
+    background-color: #fbfbfb;
+    &__container {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: toRem(80);
+        padding-bottom: toRem(30);
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 134, 30);
+        }
+        @media (max-width: toEm(850)){
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__form {
+        flex: 0 1 50%;
+        @media (max-width: toEm(850)){
+            flex: 0 0 auto;
+            width: 100%;  
+        }        
+    }
+
+    &__body {
+        flex: 0 1 50%;
+        @include adaptiveValue("padding-left", 100, 20);
+        @media (max-width: toEm(850)){
+            flex: 0 0 auto;
+            width: 100%;
+            padding-left: toRem(0);  
+        }     
+    }
+
+    &__list {
+        @media (max-width: toEm(850)){
+            margin-bottom: toRem(30); 
+        }
+    }
+
+    &__footer {
+        margin: 0 auto;
+        background-color: #fff;
+    }
+
+    &__social {
+    }
+}
+.form {/* 3.20 */
+    display: grid;
+    gap: toRem(16);
+    &__item {
+        &:last-child {
+            padding-top: toRem(22);
+        }
+    }
+
+    &__input {
+        width: 100%;
+        height: toRem(48);
+        border-radius: toRem(8);
+        padding: toRem(8) toRem(24);
+        background-color: #fff;
+        &::placeholder {
+            font-size: toRem(14);
+            line-height: 1.21;
+            color: $secondColor;
+        }
+        &:focus {
+            &::placeholder {
+                color: $mainColor;
+            }
+        }
+    }
+
+    &__button {
+        width: 100%;
+        padding: toRem(16);
+        background-color: $blueColor;
+        border-radius: toRem(8);
+        font-size: toRem(14);
+        font-weight: 500;
+        line-height: 1.21;
+        color: $bgBlueColor;
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover){
+            &:hover{
+                color: #000;
+            }
+        }
+    }
+
+    &__error {
+        padding: toRem(8) toRem(24);
+        font-size: toRem(12);
+        color: red;
+    }
+}
+textarea.form__input {
+    height: toRem(190);
+    resize: vertical;
+    padding: toRem(24);
+}
+.list-contacts {
+    display: grid;
+    @include adaptiveValue("gap", 48, 20);
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: toRem(24);
+    }
+
+    &__icon {
+        flex: 0 1 toRem(56);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $bgBlueColor;
+        width: toRem(56);
+        height: toRem(56);
+        border-radius: toRem(16);
+    }
+
+    &__body {
+    }
+
+    &__title {
+        font-weight: 500;
+        line-height: 1.18;
+        &:not(:last-child) {
+            margin-bottom: toRem(4);
+        }
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: toRem(14);
+        color: $secondColor;
+        line-height: 1.71;
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover){
+            &:hover{
+                color: $blueColor;
+            }
+        }
+    }
+}
+
+
+
+
+
